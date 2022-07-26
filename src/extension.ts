@@ -17,6 +17,16 @@ export function activate(context: vscode.ExtensionContext) {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Hello World from Atomize CSS!');
+    const document = vscode.window.activeTextEditor?.document;
+    console.log(document?.getText());
+
+    vscode.window.activeTextEditor?.edit(editBuilder => {
+      // 从开始到结束，全量替换
+      const end = new vscode.Position((document?.lineCount || 0) + 1, 0);
+      const text = '新替换的内容';
+      editBuilder.replace(new vscode.Range(new vscode.Position(0, 0), end), text);
+    });
+    
 	});
 
 	context.subscriptions.push(disposable);
