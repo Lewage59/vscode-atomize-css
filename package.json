@@ -10,16 +10,31 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:vscode-atomize-css.helloWorld"
+    "onCommand:extension.atomize"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "vscode-atomize-css.helloWorld",
-				"title": "Hello World"
+				"command": "extension.atomize",
+				"title": "Atomize CSS"
 			}
-		]
+		],
+    "keybindings": [{
+      "command": "extension.atomize",
+      "when": "editorTextFocus",
+      "key": "ctrl+t",
+      "mac": "cmd+t"
+    }],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.atomize",
+          "when": "editorFocus",
+          "group": "modification"
+        }
+      ]
+    }
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
