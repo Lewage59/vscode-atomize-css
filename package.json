@@ -4,7 +4,7 @@
 	"description": "An atomized CSS tool for VS Code.",
 	"version": "0.0.1",
 	"engines": {
-		"vscode": "^1.69.0"
+		"vscode": "^1.67.0"
 	},
 	"categories": [
 		"Other"
@@ -60,6 +60,6 @@
 		"typescript": "^4.7.4"
 	},
 	"dependencies": {
-		"transform-atomic-css": "^0.0.1"
+		"transform-atomic-css": "^0.0.2-beta.2"
 	}
 }
